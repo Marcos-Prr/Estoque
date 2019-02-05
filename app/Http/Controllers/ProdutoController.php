@@ -1,7 +1,12 @@
-<?php  namespace estoque\Http\Controllers;
+<?php  
+namespace estoque\Http\Controllers;
+
+use Illuminate\Support\Facades\DB;
 
 Class ProdutoController extends Controller {
     public function lista(){
-        return '<h2> Lista de Produtos</h2>';
+        $produtos = DB::select('select * from produtos');
+
+        return '<h1>Lista de produtos</h1>';
     }
 }
