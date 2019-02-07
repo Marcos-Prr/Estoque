@@ -14,8 +14,8 @@
                     <td><?= $p->descricao ?></td>
                     <td><?= $p->quantidade ?></td>
                     <td>
-                        <a href="/produtos/mostra>">
-                           Ir
+                        <a href="/produtos/mostra/<?= $p->id ?>">
+                            Visualizar
                         </a>    
                     </td>
                 </tr>
