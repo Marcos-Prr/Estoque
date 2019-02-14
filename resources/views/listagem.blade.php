@@ -36,5 +36,10 @@
             Um ou menos itens no estoque
     </div>    
 </h3> 
+@if(old('nome'))
+    <div class="alert alert-success " >
+        O produto {{ old('nome')}} foi adicionado com sucesso!
+    </div>  
+@endif
   
 @stop

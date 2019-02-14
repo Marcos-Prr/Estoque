@@ -33,6 +33,10 @@ Class ProdutoController extends Controller {
 
         DB::insert('insert into produtos (nome, valor, descricao, quantidade) values (?,?,?,?)', array($nome, $valor, $descricao, $quantidade));
         
-        return view('produtos.adicionado')->with('nome',$nome);
+        return redirect() ->action('ProdutoController@lista')->withInput(Request::only('nome'));
+    }
+    public function listaJson(){
+        $produtos =DB::select('select * from produtos ');
+        return response()->json($produtos);
     }
 }

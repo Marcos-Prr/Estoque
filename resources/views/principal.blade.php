@@ -17,10 +17,10 @@
             </div>
                 <ul class="nav navbar-nav navbar-right">
                     <button class="btn btn-info" >
-                        <li><a href="/produtos">Listagem</a></li>
+                        <li><a href="{{action('ProdutoController@lista')}}">Listagem</a></li>
                     </button>
                     <button class="btn btn-info" >
-                        <li><a href="/produtos/novo">Novo</a></li>
+                        <li><a href="{{action('ProdutoController@novo')}}">Novo</a></li>
                     </button>
                 </ul>
             </div>
