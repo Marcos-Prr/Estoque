@@ -20,7 +20,12 @@
                     <td>
                         <a href="/produtos/mostra/<?= $p->id ?> ">
                             <button type="button" class="btn btn-info">Detalhes</button>
+
+                         
                         </a>
+                        <a href="{{action('ProdutoController@remove',$p->id)}}">
+                            <button class="btn btn-danger ">Remover </button>
+                        </a>   
                     </td>
                 </tr>
         <?php endforeach ?>
@@ -31,11 +36,6 @@
 
 @endif
 
-<h3>
-    <div class="alert alert-danger">
-            Um ou menos itens no estoque
-    </div>    
-</h3> 
 @if(old('nome'))
     <div class="alert alert-success " >
         O produto {{ old('nome')}} foi adicionado com sucesso!
