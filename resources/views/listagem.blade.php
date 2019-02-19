@@ -25,7 +25,9 @@
                         </a>
                         <a href="{{action('ProdutoController@remove',$p->id)}}">
                             <button class="btn btn-danger ">Remover </button>
-                        </a>   
+                        </a>  
+                        
+                    
                     </td>
                 </tr>
         <?php endforeach ?>
