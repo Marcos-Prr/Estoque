@@ -19,6 +19,9 @@ class Kernel extends HttpKernel
         \estoque\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
         \estoque\Http\Middleware\TrustProxies::class,
+        'Illuminate\Session\Middleware\StartSession',
+        'Illuminate\View\Middleware\ShareErrorsFromSession',
+        'estoque\Http\Middleware\VerifyCsrfToken',
     ];
 
     /**
@@ -60,6 +63,12 @@ class Kernel extends HttpKernel
         'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
+
+        'auth' => 'estoque\Http\Middleware\Authenticate',
+        'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
+        'guest' => 'estoque\Http\Middleware\RedirectIfAuthenticated',
+
+        'nosso-middleware' => 'estoque\Http\Middleware\AutorizacaoMiddleware'
     ];
 
     /**
